@@ -1,1 +1,49 @@
 Assignment 1 questions 2 
+
+#include <iostream>
+using namespace std;
+
+class Bank {
+public:
+    bool verifyPIN(int pin) {
+        return pin == 1234;
+    }
+
+    bool withdraw(int amount) {
+        if (amount <= 5000 && amount > 0) {
+            cout << "Withdrawal Successful!" << endl;
+            return true;
+        }
+        cout << "Insufficient Balance!" << endl;
+        return false;
+    }
+};
+
+class ATM {
+public:
+    void transaction() {
+        Bank bank;
+        int pin, amount;
+
+        cout << "Enter PIN: ";
+        cin >> pin;
+
+        if (bank.verifyPIN(pin)) {
+            cout << "PIN Verified!" << endl;
+
+            cout << "Enter Amount: ";
+            cin >> amount;
+
+            bank.withdraw(amount);
+        } else {
+            cout << "Invalid PIN!" << endl;
+        }
+    }
+};
+
+int main() {
+    ATM atm;
+    atm.transaction();
+
+    return 0;
+}
