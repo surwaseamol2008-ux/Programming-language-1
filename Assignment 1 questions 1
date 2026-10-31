@@ -1,0 +1,38 @@
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Student class with attributes
+class Student {
+public:
+    int rollNo;
+    string name;
+    int age;
+    float marks;
+
+    // Function to display student details
+    void display() {
+        cout << "\nStudent Details" << endl;
+        cout << "Roll Number: " << rollNo << endl;
+        cout << "Name: " << name << endl;
+        cout << "Age: " << age << endl;
+        cout << "Marks: " << marks << endl;
+    }
+};
+
+int main() {
+    // Creating an object of Student class
+    Student s1;
+
+    // Assigning values to attributes
+    s1.rollNo = 101;
+    s1.name = "Amol";
+    s1.age = 18;
+    s1.marks = 85.5;
+
+    // Displaying student information
+    s1.display();
+
+    return 0;
+}
